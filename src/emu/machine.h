@@ -352,7 +352,7 @@ private:
 	// string formatting buffer
 	mutable util::ovectorstream m_string_buffer;
 
-#if defined(__EMSCRIPTEN__)
+#if defined(__EMSCRIPTEN__) && !defined(__LIBRETRO__)
 private:
 	static running_machine *emscripten_running_machine;
 	static void emscripten_main_loop();

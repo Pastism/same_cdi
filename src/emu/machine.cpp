@@ -306,7 +306,7 @@ int running_machine::run(bool quiet)
 		if (m_saveload_schedule != saveload_schedule::NONE)
 			handle_saveload();
 
-#if defined(__EMSCRIPTEN__)
+#if defined(__EMSCRIPTEN__) && !defined(__LIBRETRO__)
 		// break out to our async javascript loop and halt
 		emscripten_set_running_machine(this);
 #endif
